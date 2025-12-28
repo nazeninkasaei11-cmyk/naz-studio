@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { insertProjectSchema, insertServiceSchema, insertArticleSchema, insertInquirySchema, insertSubscriberSchema, projects, services, articles, inquiries, subscribers } from './schema';
 
+export { insertProjectSchema, insertServiceSchema, insertArticleSchema, insertInquirySchema, insertSubscriberSchema };
+
 export const api = {
   projects: {
     list: {
