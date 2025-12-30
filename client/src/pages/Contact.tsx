@@ -59,8 +59,8 @@ export default function Contact() {
             <div>
               <h3 className="font-serif text-2xl mb-4">Studio</h3>
               <p className="text-muted-foreground font-light leading-relaxed">
-                Brisbane, Queensland<br />
-                Australia
+                20 Robinson Rd E<br />
+                Virginia QLD 4014
               </p>
             </div>
             
