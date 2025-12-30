@@ -87,7 +87,7 @@ export default function Contact() {
 
             <div className="pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground font-light italic">
-                We are currently accepting new projects for 2025. Please fill out the form to discuss your project.
+                We are currently accepting new projects for 2026. Please fill out the form to discuss your project.
               </p>
             </div>
           </motion.div>
