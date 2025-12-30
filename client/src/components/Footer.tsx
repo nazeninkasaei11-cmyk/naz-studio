@@ -51,7 +51,7 @@ export function Footer() {
               We create bespoke interiors that balance aesthetics with functionality, delivering homes that inspire and endure.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
+              <a href="https://www.instagram.com/nazstudio.com.au/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Instagram className="w-5 h-5 text-primary" />
               </a>
               <a href="#" className="p-2 rounded-full border border-border hover:bg-white transition-colors">

@@ -79,7 +79,7 @@ export default function Contact() {
             <div>
               <h3 className="font-serif text-2xl mb-4">Follow Us</h3>
               <div className="flex flex-col space-y-2 text-muted-foreground font-light">
-                <a href="#" className="hover:text-primary transition-colors w-fit">Instagram</a>
+                <a href="https://www.instagram.com/nazstudio.com.au/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors w-fit">Instagram</a>
                 <a href="#" className="hover:text-primary transition-colors w-fit">Facebook</a>
                 <a href="#" className="hover:text-primary transition-colors w-fit">Pinterest</a>
               </div>
