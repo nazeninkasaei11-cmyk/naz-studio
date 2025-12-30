@@ -22,6 +22,8 @@ export interface IStorage {
   createService(service: InsertService): Promise<Service>;
   createArticle(article: InsertArticle): Promise<Article>;
   updateProjectImages(title: string, images: string[]): Promise<void>;
+  upsertProject(project: InsertProject): Promise<void>;
+  deleteAllProjects(): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -69,6 +71,19 @@ export class DatabaseStorage implements IStorage {
 
   async updateProjectImages(title: string, images: string[]): Promise<void> {
     await db.update(projects).set({ images }).where(eq(projects.title, title));
+  }
+
+  async upsertProject(project: InsertProject): Promise<void> {
+    const existing = await db.select().from(projects).where(eq(projects.title, project.title));
+    if (existing.length > 0) {
+      await db.update(projects).set(project).where(eq(projects.title, project.title));
+    } else {
+      await db.insert(projects).values(project);
+    }
+  }
+
+  async deleteAllProjects(): Promise<void> {
+    await db.delete(projects);
   }
 }
 

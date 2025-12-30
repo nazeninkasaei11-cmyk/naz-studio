@@ -57,10 +57,9 @@ export async function registerRoutes(
     }
   });
 
-  // Seed data
-  const existingProjects = await storage.getProjects();
-  if (existingProjects.length === 0) {
-    await storage.createProject({
+  // Seed/update project data - always ensure correct data
+  const canonicalProjects = [
+    {
       title: "Stafford Heights",
       description: "A tailored renovation focusing on lifestyle and functionality.",
       imageUrl: "/images/stafford-heights-main.jpg",
@@ -71,8 +70,8 @@ export async function registerRoutes(
       ],
       category: "Residential",
       isFeatured: true
-    });
-    await storage.createProject({
+    },
+    {
       title: "El Campello",
       description: "High-end interior design for a luxury coastal property.",
       imageUrl: "/images/el-campello-main.jpg",
@@ -81,15 +80,21 @@ export async function registerRoutes(
       ],
       category: "Residential",
       isFeatured: true
-    });
-    await storage.createProject({
+    },
+    {
       title: "Mariendorf Berlin",
       description: "Seamless intersection of architecture and interiors.",
       imageUrl: "/images/mariendorf-berlin-main.jpg",
       images: [],
       category: "Residential",
       isFeatured: false
-    });
+    }
+  ];
+
+  // Clear old projects and reseed with canonical data
+  await storage.deleteAllProjects();
+  for (const project of canonicalProjects) {
+    await storage.createProject(project);
   }
 
   const existingServices = await storage.getServices();
@@ -119,24 +124,6 @@ export async function registerRoutes(
       link: "https://www.vogue.com/article/interior-design-trends-2026",
       imageUrl: "/images/article-press.jpg"
     });
-  }
-
-  // Update existing projects with images if they don't have any
-  const projectsToUpdate = await storage.getProjects();
-  for (const project of projectsToUpdate) {
-    if (!project.images || project.images.length === 0) {
-      if (project.title === "Stafford Heights") {
-        await storage.updateProjectImages(project.title, [
-          "/images/stafford-heights-stairs.jpg",
-          "/images/stafford-heights-stairs-2.jpg",
-          "/images/stafford-heights-chandelier.jpg"
-        ]);
-      } else if (project.title === "El Campello") {
-        await storage.updateProjectImages(project.title, [
-          "/images/el-campello-dining.jpg"
-        ]);
-      }
-    }
   }
 
   return httpServer;
