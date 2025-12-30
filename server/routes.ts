@@ -61,7 +61,7 @@ export async function registerRoutes(
   const existingProjects = await storage.getProjects();
   if (existingProjects.length === 0) {
     await storage.createProject({
-      title: "West End Home",
+      title: "Stafford Heights",
       description: "A tailored renovation focusing on lifestyle and functionality.",
       imageUrl: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
       category: "Residential",
