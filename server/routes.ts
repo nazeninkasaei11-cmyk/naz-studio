@@ -75,7 +75,7 @@ export async function registerRoutes(
       title: "El Campello",
       description: "High-end interior design for a luxury coastal property.",
       imageUrl: "/images/el-campello-dining.jpg",
-      images: [],
+      images: ["/images/el-campello-arches.jpg"],
       category: "Residential",
       isFeatured: true
     },
