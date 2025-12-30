@@ -63,21 +63,30 @@ export async function registerRoutes(
     await storage.createProject({
       title: "Stafford Heights",
       description: "A tailored renovation focusing on lifestyle and functionality.",
-      imageUrl: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+      imageUrl: "/images/stafford-heights-main.jpg",
+      images: [
+        "/images/stafford-heights-stairs.jpg",
+        "/images/stafford-heights-stairs-2.jpg",
+        "/images/stafford-heights-chandelier.jpg"
+      ],
       category: "Residential",
       isFeatured: true
     });
     await storage.createProject({
-      title: "Coastal Retreat",
+      title: "El Campello",
       description: "High-end interior design for a luxury coastal property.",
-      imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      imageUrl: "/images/el-campello-main.jpg",
+      images: [
+        "/images/el-campello-dining.jpg"
+      ],
       category: "Residential",
       isFeatured: true
     });
     await storage.createProject({
-      title: "Modern Loft",
+      title: "Mariendorf Berlin",
       description: "Seamless intersection of architecture and interiors.",
-      imageUrl: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
+      imageUrl: "/images/mariendorf-berlin-main.jpg",
+      images: [],
       category: "Residential",
       isFeatured: false
     });
@@ -88,28 +97,46 @@ export async function registerRoutes(
     await storage.createService({
       title: "Interior Design",
       description: "Full service interior design from concept to completion.",
-      imageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6"
+      imageUrl: "/images/interior-design.jpg"
     });
     await storage.createService({
       title: "Architectural Design",
       description: "Bespoke architectural solutions for modern living.",
-      imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+      imageUrl: "/images/architectural-design.jpg"
     });
     await storage.createService({
       title: "Styling & Decoration",
       description: "Curated furniture and art selection to finish your home.",
-      imageUrl: "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d"
+      imageUrl: "/images/styling-decoration.jpg"
     });
   }
 
   const existingArticles = await storage.getArticles();
   if (existingArticles.length === 0) {
     await storage.createArticle({
-      title: "How Billy Blue Makes Design Education Practical",
+      title: "The 11 Key Interior Design Trends Set to Define 2026",
       publication: "Vogue Living",
-      link: "#",
-      imageUrl: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e"
+      link: "https://www.vogue.com/article/interior-design-trends-2026",
+      imageUrl: "/images/article-press.jpg"
     });
+  }
+
+  // Update existing projects with images if they don't have any
+  const projectsToUpdate = await storage.getProjects();
+  for (const project of projectsToUpdate) {
+    if (!project.images || project.images.length === 0) {
+      if (project.title === "Stafford Heights") {
+        await storage.updateProjectImages(project.title, [
+          "/images/stafford-heights-stairs.jpg",
+          "/images/stafford-heights-stairs-2.jpg",
+          "/images/stafford-heights-chandelier.jpg"
+        ]);
+      } else if (project.title === "El Campello") {
+        await storage.updateProjectImages(project.title, [
+          "/images/el-campello-dining.jpg"
+        ]);
+      }
+    }
   }
 
   return httpServer;

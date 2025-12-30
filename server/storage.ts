@@ -21,6 +21,7 @@ export interface IStorage {
   createProject(project: InsertProject): Promise<Project>;
   createService(service: InsertService): Promise<Service>;
   createArticle(article: InsertArticle): Promise<Article>;
+  updateProjectImages(title: string, images: string[]): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -64,6 +65,10 @@ export class DatabaseStorage implements IStorage {
   async createArticle(article: InsertArticle): Promise<Article> {
     const [newArticle] = await db.insert(articles).values(article).returning();
     return newArticle;
+  }
+
+  async updateProjectImages(title: string, images: string[]): Promise<void> {
+    await db.update(projects).set({ images }).where(eq(projects.title, title));
   }
 }
 
