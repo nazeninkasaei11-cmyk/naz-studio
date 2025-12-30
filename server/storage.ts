@@ -24,6 +24,7 @@ export interface IStorage {
   updateProjectImages(title: string, images: string[]): Promise<void>;
   upsertProject(project: InsertProject): Promise<void>;
   deleteAllProjects(): Promise<void>;
+  deleteAllServices(): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -84,6 +85,10 @@ export class DatabaseStorage implements IStorage {
 
   async deleteAllProjects(): Promise<void> {
     await db.delete(projects);
+  }
+
+  async deleteAllServices(): Promise<void> {
+    await db.delete(services);
   }
 }
 

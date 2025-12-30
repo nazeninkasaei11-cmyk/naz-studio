@@ -95,24 +95,23 @@ export async function registerRoutes(
     await storage.createProject(project);
   }
 
-  const existingServices = await storage.getServices();
-  if (existingServices.length === 0) {
-    await storage.createService({
-      title: "Interior Design",
-      description: "Full service interior design from concept to completion.",
-      imageUrl: "/images/interior-design.jpg"
-    });
-    await storage.createService({
-      title: "Architectural Design",
-      description: "Bespoke architectural solutions for modern living.",
-      imageUrl: "/images/architectural-design.jpg"
-    });
-    await storage.createService({
-      title: "Styling & Decoration",
-      description: "Curated furniture and art selection to finish your home.",
-      imageUrl: "/images/styling-decoration.jpg"
-    });
-  }
+  // Clear old services and reseed with canonical data
+  await storage.deleteAllServices();
+  await storage.createService({
+    title: "Interior Design",
+    description: "Full service interior design from concept to completion.",
+    imageUrl: "/images/interior-design.jpg"
+  });
+  await storage.createService({
+    title: "Architectural Design",
+    description: "Bespoke architectural solutions for modern living.",
+    imageUrl: "/images/architectural-design.jpg"
+  });
+  await storage.createService({
+    title: "Styling & Decoration",
+    description: "Curated furniture and art selection to finish your home.",
+    imageUrl: "/images/styling-decoration.jpg"
+  });
 
   const existingArticles = await storage.getArticles();
   if (existingArticles.length === 0) {
