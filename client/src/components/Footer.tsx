@@ -54,7 +54,7 @@ export function Footer() {
               <a href="https://www.instagram.com/nazstudio.com.au/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Instagram className="w-5 h-5 text-primary" />
               </a>
-              <a href="#" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61585530939751" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Facebook className="w-5 h-5 text-primary" />
               </a>
               <a href="mailto:info@nazstudio.com.au" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
