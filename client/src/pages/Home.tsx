@@ -24,7 +24,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 z-10" />
           {/* Living room interior bright airy */}
           <img 
-            src="/images/hero-background.png"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
             alt="Luxury Interior" 
             className="w-full h-full object-cover"
           />
