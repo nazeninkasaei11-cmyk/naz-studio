@@ -139,10 +139,10 @@ export default function Home() {
           >
             <span className="text-6xl font-serif text-white/20 block mb-6">"</span>
             <h3 className="font-serif text-2xl md:text-3xl leading-relaxed mb-8 italic">
-              The entire process was seamless, and the end result exceeded my expectations. Naz Studio truly captured our vision and brought it to life with their unique flair and expertise.
+              The entire collaboration was professional from start to finish, and the final outcome far surpassed what we imagined. Naz Studio understood our concept perfectly and executed it with incredible precision and style.
             </h3>
             <cite className="not-italic luxury-spacing text-white/60">
-              — J.R. Stafford Heights
+              — Lukas Schmidt
             </cite>
           </motion.div>
         </div>
