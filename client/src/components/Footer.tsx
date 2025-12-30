@@ -57,7 +57,7 @@ export function Footer() {
               <a href="#" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Facebook className="w-5 h-5 text-primary" />
               </a>
-              <a href="mailto:hello@nazstudio.com" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
+              <a href="mailto:info@nazstudio.com.au" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Mail className="w-5 h-5 text-primary" />
               </a>
             </div>

@@ -67,8 +67,8 @@ export default function Contact() {
             <div>
               <h3 className="font-serif text-2xl mb-4">Contact</h3>
               <p className="text-muted-foreground font-light leading-relaxed mb-2">
-                <a href="mailto:hello@natalieboyd.design" className="hover:text-primary transition-colors">
-                  hello@natalieboyd.design
+                <a href="mailto:info@nazstudio.com.au" className="hover:text-primary transition-colors">
+                  info@nazstudio.com.au
                 </a>
               </p>
               <p className="text-muted-foreground font-light">
