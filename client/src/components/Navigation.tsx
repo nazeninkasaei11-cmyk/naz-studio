@@ -44,10 +44,7 @@ export function Navigation() {
               "font-serif tracking-widest text-lg font-bold transition-colors",
               scrolled ? "text-primary" : "text-primary"
             )}>
-              NATALIE BOYD
-            </span>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground group-hover:text-primary transition-colors">
-              Design House
+              NAZ STUDIO
             </span>
           </div>
         </Link>
