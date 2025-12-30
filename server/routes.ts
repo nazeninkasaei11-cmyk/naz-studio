@@ -66,7 +66,8 @@ export async function registerRoutes(
       images: [
         "/images/stafford-heights-stairs.jpg",
         "/images/stafford-heights-stairs-2.jpg",
-        "/images/stafford-heights-chandelier.jpg"
+        "/images/stafford-heights-chandelier.jpg",
+        "/images/stafford-heights-games-room.jpg"
       ],
       category: "Residential",
       isFeatured: true
