@@ -37,7 +37,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight max-w-4xl mx-auto">
-              Client-driven studio, crafting bespoke homes and interiors.
+              A design studio dedicated to client-led, bespoke homes and timeless interiors.
             </h1>
             <p className="text-lg md:text-xl font-light tracking-wide mb-10 opacity-90">
               Focusing on lifestyle, quality, and functionality.
