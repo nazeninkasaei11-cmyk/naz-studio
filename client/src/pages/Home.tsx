@@ -32,7 +32,7 @@ export default function Home() {
           <img 
             src="/images/hero-living-room.png"
             alt="Luxury modern living room interior design by Naz Studio Brisbane" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover saturate-[0.85] contrast-[0.95] brightness-[0.95]"
           />
         </div>
 
