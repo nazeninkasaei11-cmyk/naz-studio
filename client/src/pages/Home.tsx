@@ -27,7 +27,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax-like feel via fixed attachment if desired, but object-cover is cleaner here */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent z-10" />
           {/* Living room interior bright airy */}
           <img 
             src="/images/hero-living-room.png"
