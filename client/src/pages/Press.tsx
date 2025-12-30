@@ -37,6 +37,7 @@ export default function Press() {
                   src={article.imageUrl} 
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ objectPosition: 'center 30%' }}
                 />
                 <div className="absolute bottom-4 right-4 z-20 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                   <ExternalLink className="w-4 h-4 text-primary" />
