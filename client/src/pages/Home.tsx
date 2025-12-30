@@ -30,9 +30,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 z-10" />
           {/* Living room interior bright airy */}
           <img 
-            src="/images/hero-living-room.png"
+            src="/images/hero-living-room.avif"
             alt="Luxury modern living room interior design by Naz Studio Brisbane" 
-            className="w-full h-full object-cover saturate-[0.85] contrast-[0.95] brightness-[0.95]"
+            className="w-full h-full object-cover"
           />
         </div>
 
