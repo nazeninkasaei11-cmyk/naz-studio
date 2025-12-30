@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SEO } from "@/components/SEO";
 import { useCreateInquiry } from "@/hooks/use-content";
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
@@ -40,6 +41,11 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background pt-32">
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with Naz Studio for your interior design project. We are currently accepting new projects for 2026. Located in Virginia, Brisbane QLD."
+        canonical="/contact"
+      />
       <Navigation />
 
       <div className="container mx-auto px-6 pb-24">

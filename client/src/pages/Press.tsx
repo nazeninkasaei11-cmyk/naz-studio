@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SEO } from "@/components/SEO";
 import { useArticles } from "@/hooks/use-content";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
@@ -10,6 +11,11 @@ export default function Press() {
 
   return (
     <div className="min-h-screen bg-background pt-32">
+      <SEO 
+        title="Press & Articles"
+        description="Read about Naz Studio in the media. Featured articles and press coverage of our luxury interior design work in publications like Vogue Living."
+        canonical="/press"
+      />
       <Navigation />
 
       <div className="container mx-auto px-6 pb-24">
@@ -35,9 +41,10 @@ export default function Press() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10" />
                 <img 
                   src={article.imageUrl} 
-                  alt={article.title}
+                  alt={`${article.title} - featured in ${article.publication}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: 'center 45%' }}
+                  loading="lazy"
                 />
                 <div className="absolute bottom-4 right-4 z-20 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                   <ExternalLink className="w-4 h-4 text-primary" />

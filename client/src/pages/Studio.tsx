@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectCarouselOverlay } from "@/components/ProjectCarouselOverlay";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SEO } from "@/components/SEO";
 import { useProjects } from "@/hooks/use-content";
 import { Loader2 } from "lucide-react";
 import type { Project } from "@shared/schema";
@@ -25,8 +26,36 @@ export default function Studio() {
     }
   };
 
+  const projectsJsonLd = projects && projects.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Naz Studio Interior Design Projects",
+    "description": "Portfolio of luxury residential interior design projects by Naz Studio",
+    "itemListElement": projects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "name": project.title,
+        "description": project.description,
+        "image": `https://nazstudio.com.au${project.imageUrl}`,
+        "creator": {
+          "@type": "Organization",
+          "name": "Naz Studio"
+        },
+        "genre": project.category
+      }
+    }))
+  } : undefined;
+
   return (
     <div className="min-h-screen bg-background pt-32">
+      <SEO 
+        title="Our Projects"
+        description="Explore Naz Studio's portfolio of luxury residential interior design projects in Brisbane and beyond. View our work in Stafford Heights, El Campello, and Mariendorf Berlin."
+        canonical="/studio"
+        jsonLd={projectsJsonLd}
+      />
       <Navigation />
       
       <div className="container mx-auto px-6 pb-24">

@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SEO } from "@/components/SEO";
 import { useServices } from "@/hooks/use-content";
 import { motion } from "framer-motion";
 
@@ -9,6 +10,11 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-background pt-32">
+      <SEO 
+        title="Interior Design Services"
+        description="Discover Naz Studio's comprehensive interior design services including full-service interior design, architectural design, and styling and decoration for luxury homes."
+        canonical="/services"
+      />
       <Navigation />
 
       <div className="container mx-auto px-6 pb-24">
@@ -43,8 +49,9 @@ export default function Services() {
                 <div className="mb-6 overflow-hidden h-48 w-full">
                   <img 
                     src={service.imageUrl} 
-                    alt={service.title}
+                    alt={`${service.title} - professional interior design service by Naz Studio Brisbane`}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">{service.title}</h3>

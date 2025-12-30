@@ -23,8 +23,9 @@ export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 duration-500" />
         <img
           src={project.imageUrl}
-          alt={project.title}
+          alt={`${project.title} - ${project.category} interior design project by Naz Studio`}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          loading="lazy"
         />
         <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="bg-white p-2 rounded-full shadow-lg">

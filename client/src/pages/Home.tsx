@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ProjectCard } from "@/components/ProjectCard";
+import { SEO } from "@/components/SEO";
 import { useProjects } from "@/hooks/use-content";
 
 export default function Home() {
@@ -15,6 +16,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Luxury Interior Design Brisbane"
+        description="Naz Studio is a luxury interior design studio in Brisbane, Australia. We create bespoke homes and timeless interiors focused on lifestyle, quality, and functionality."
+        canonical="/"
+      />
       <Navigation />
 
       {/* Hero Section */}
@@ -25,7 +31,7 @@ export default function Home() {
           {/* Living room interior bright airy */}
           <img 
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
-            alt="Luxury Interior" 
+            alt="Luxury modern living room interior design by Naz Studio Brisbane" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -61,10 +67,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <img 
-              /* Elegant portrait of designer or team */
               src="/images/founder-portrait.png" 
-              alt="Naz Studio Founder" 
+              alt="Naz, founder and principal designer of Naz Studio interior design Brisbane" 
               className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
             />
           </motion.div>
           <motion.div
