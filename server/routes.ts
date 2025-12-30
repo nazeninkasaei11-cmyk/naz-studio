@@ -113,15 +113,14 @@ export async function registerRoutes(
     imageUrl: "/images/styling-decoration.jpg"
   });
 
-  const existingArticles = await storage.getArticles();
-  if (existingArticles.length === 0) {
-    await storage.createArticle({
-      title: "The 11 Key Interior Design Trends Set to Define 2026",
-      publication: "Vogue Living",
-      link: "https://www.vogue.com/article/interior-design-trends-2026",
-      imageUrl: "/images/article-press.jpg"
-    });
-  }
+  // Clear old articles and reseed with canonical data
+  await storage.deleteAllArticles();
+  await storage.createArticle({
+    title: "The 11 Key Interior Design Trends Set to Define 2026",
+    publication: "Vogue Living",
+    link: "https://www.vogue.com/article/interior-design-trends-2026",
+    imageUrl: "/images/article-press.jpg"
+  });
 
   return httpServer;
 }
