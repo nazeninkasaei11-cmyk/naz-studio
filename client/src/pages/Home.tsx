@@ -62,7 +62,7 @@ export default function Home() {
           >
             <img 
               /* Elegant portrait of designer or team */
-              src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=2574&auto=format&fit=crop" 
+              src="/images/founder-portrait.png" 
               alt="Naz Studio Founder" 
               className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
