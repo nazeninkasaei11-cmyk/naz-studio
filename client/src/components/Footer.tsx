@@ -96,7 +96,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/40 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Naz Studio. All Rights Reserved.</p>
+          <p>© 2026 Naz Studio. All Rights Reserved.</p>
           <button 
             onClick={scrollToTop}
             className="mt-4 md:mt-0 uppercase tracking-widest text-xs hover:text-primary transition-colors"
