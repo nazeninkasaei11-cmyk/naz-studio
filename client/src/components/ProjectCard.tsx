@@ -2,7 +2,13 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@shared/schema";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+  onClick?: () => void;
+}
+
+export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -10,6 +16,8 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group cursor-pointer"
+      onClick={onClick}
+      data-testid={`card-project-${project.id}`}
     >
       <div className="relative overflow-hidden aspect-[4/5] mb-6 bg-secondary/50">
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 duration-500" />

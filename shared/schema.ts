@@ -7,6 +7,7 @@ export const projects = pgTable("projects", {
   title: text("title").notNull(),
   description: text("description").notNull(),
   imageUrl: text("image_url").notNull(),
+  images: text("images").array().default([]),
   category: text("category").notNull(), // e.g., "Residential", "Commercial"
   isFeatured: boolean("is_featured").default(false),
 });

@@ -1,12 +1,29 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectCarouselOverlay } from "@/components/ProjectCarouselOverlay";
 import { SectionHeader } from "@/components/SectionHeader";
 import { useProjects } from "@/hooks/use-content";
 import { Loader2 } from "lucide-react";
+import type { Project } from "@shared/schema";
 
 export default function Studio() {
   const { data: projects, isLoading } = useProjects();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [overlayOpen, setOverlayOpen] = useState(false);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setOverlayOpen(true);
+  };
+
+  const handleOverlayClose = (open: boolean) => {
+    setOverlayOpen(open);
+    if (!open) {
+      setSelectedProject(null);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background pt-32">
@@ -25,7 +42,12 @@ export default function Studio() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {projects?.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                index={index} 
+                onClick={() => handleProjectClick(project)}
+              />
             ))}
           </div>
         )}
@@ -38,6 +60,12 @@ export default function Studio() {
       </div>
 
       <Footer />
+
+      <ProjectCarouselOverlay
+        project={selectedProject}
+        open={overlayOpen}
+        onOpenChange={handleOverlayClose}
+      />
     </div>
   );
 }
