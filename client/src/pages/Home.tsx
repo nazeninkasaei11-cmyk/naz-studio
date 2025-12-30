@@ -75,7 +75,7 @@ export default function Home() {
           >
             <span className="luxury-spacing text-muted-foreground block mb-6">About Us</span>
             <h2 className="font-serif text-3xl md:text-4xl text-primary mb-6 leading-tight">
-              Designing homes across Australia from our Brisbane studio.
+              Designing Homes and Commercial Spaces in Brisbane
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-lg font-light">
               Naz Studio brings a global perspective to architecture and interiors, shaped by professional experience in Europe, including Germany and Spain. From renovating character homes in Brisbane to delivering tailored new builds, our work is defined by thoughtful planning, refined detailing, and a deep understanding of how considered design supports modern living.
