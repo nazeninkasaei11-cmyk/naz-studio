@@ -72,7 +72,7 @@ export default function Contact() {
                 </a>
               </p>
               <p className="text-muted-foreground font-light">
-                +61 400 000 000
+                +61 45 14 333 14
               </p>
             </div>
 
