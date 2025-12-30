@@ -78,7 +78,7 @@ export default function Home() {
               Designing homes across Australia from our Brisbane studio.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-lg font-light">
-              Naz Studio lives at the intersection of architecture and interiors; because the best design is seamless. From tailored new builds to transformative renovations, our work is defined by thoughtful planning, refined detailing, and a deep understanding of how great design supports modern living.
+              Naz Studio brings a global perspective to architecture and interiors, shaped by professional experience in Europe, including Germany and Spain. From renovating character homes in Brisbane to delivering tailored new builds, our work is defined by thoughtful planning, refined detailing, and a deep understanding of how considered design supports modern living.
             </p>
             <Link href="/services" className="inline-flex items-center text-primary border-b border-primary/20 pb-1 hover:border-primary transition-colors group">
               <span className="uppercase tracking-widest text-xs mr-2">Discover Our Services</span>
