@@ -63,7 +63,7 @@ export default function Home() {
             <img 
               /* Elegant portrait of designer or team */
               src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=2574&auto=format&fit=crop" 
-              alt="Natalie Boyd" 
+              alt="Naz Studio Founder" 
               className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
@@ -78,7 +78,7 @@ export default function Home() {
               Designing homes across Australia from our Brisbane studio.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-lg font-light">
-              Natalie Boyd Design House lives at the intersection of architecture and interiors; because the best design is seamless. From tailored new builds to transformative renovations, our work is defined by thoughtful planning, refined detailing, and a deep understanding of how great design supports modern living.
+              Naz Studio lives at the intersection of architecture and interiors; because the best design is seamless. From tailored new builds to transformative renovations, our work is defined by thoughtful planning, refined detailing, and a deep understanding of how great design supports modern living.
             </p>
             <Link href="/services" className="inline-flex items-center text-primary border-b border-primary/20 pb-1 hover:border-primary transition-colors group">
               <span className="uppercase tracking-widest text-xs mr-2">Discover Our Services</span>
@@ -133,7 +133,7 @@ export default function Home() {
           >
             <span className="text-6xl font-serif text-white/20 block mb-6">"</span>
             <h3 className="font-serif text-2xl md:text-3xl leading-relaxed mb-8 italic">
-              The entire process was seamless, and the end result exceeded my expectations. Natalie truly captured my vision and brought it to life with her unique flair and expertise.
+              The entire process was seamless, and the end result exceeded my expectations. Naz Studio truly captured our vision and brought it to life with their unique flair and expertise.
             </h3>
             <cite className="not-italic luxury-spacing text-white/60">
               — J.R. West End Home

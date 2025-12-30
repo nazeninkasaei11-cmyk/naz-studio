@@ -46,7 +46,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
           {/* Brand */}
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl">Natalie Boyd Design House</h3>
+            <h3 className="font-serif text-2xl">Naz Studio</h3>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
               We create bespoke interiors that balance aesthetics with functionality, delivering homes that inspire and endure.
             </p>
@@ -57,7 +57,7 @@ export function Footer() {
               <a href="#" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Facebook className="w-5 h-5 text-primary" />
               </a>
-              <a href="mailto:hello@natalieboyd.design" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
+              <a href="mailto:hello@nazstudio.com" className="p-2 rounded-full border border-border hover:bg-white transition-colors">
                 <Mail className="w-5 h-5 text-primary" />
               </a>
             </div>
@@ -96,7 +96,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border/40 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Natalie Boyd Design House. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Naz Studio. All Rights Reserved.</p>
           <button 
             onClick={scrollToTop}
             className="mt-4 md:mt-0 uppercase tracking-widest text-xs hover:text-primary transition-colors"
