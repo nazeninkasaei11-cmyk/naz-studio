@@ -136,7 +136,7 @@ export default function Home() {
               The entire process was seamless, and the end result exceeded my expectations. Naz Studio truly captured our vision and brought it to life with their unique flair and expertise.
             </h3>
             <cite className="not-italic luxury-spacing text-white/60">
-              — J.R. West End Home
+              — J.R. Stafford Heights
             </cite>
           </motion.div>
         </div>
