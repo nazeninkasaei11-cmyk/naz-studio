@@ -83,7 +83,7 @@ export async function registerRoutes(
       title: "Mariendorf Berlin",
       description: "Seamless intersection of architecture and interiors.",
       imageUrl: "/images/mariendorf-berlin-main.jpg",
-      images: ["/images/mariendorf-berlin-exterior.webp", "/images/mariendorf-berlin-entrance.webp"],
+      images: ["/images/mariendorf-berlin-exterior.webp", "/images/mariendorf-berlin-entrance.webp", "/images/mariendorf-berlin-courtyard.webp"],
       category: "Residential",
       isFeatured: false
     }
