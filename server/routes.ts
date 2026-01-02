@@ -92,7 +92,7 @@ export async function registerRoutes(
       title: "The Connoisseur's Corner",
       description: "An exquisite residential space designed for refined living and sophisticated taste.",
       imageUrl: "/images/connoisseurs-corner-main.jpg",
-      images: ["/images/connoisseurs-corner-lounge.jpg"],
+      images: ["/images/connoisseurs-corner-lounge.jpg", "/images/connoisseurs-corner-bar.jpg"],
       category: "Residential",
       isFeatured: false
     }
