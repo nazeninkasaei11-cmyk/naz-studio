@@ -28,7 +28,7 @@ export default function Home() {
         {/* Background Image with Parallax-like feel via fixed attachment if desired, but object-cover is cleaner here */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent z-10" />
+          <div className="absolute top-0 left-0 w-1/3 h-32 bg-gradient-to-br from-white/30 via-white/15 to-transparent z-10" />
           {/* Living room interior bright airy */}
           <img 
             src="/images/hero-living-room.avif"
