@@ -87,6 +87,14 @@ export async function registerRoutes(
       images: ["/images/mariendorf-berlin-exterior.webp", "/images/mariendorf-berlin-entrance.webp", "/images/mariendorf-berlin-courtyard.webp", "/images/mariendorf-berlin-street.webp"],
       category: "Residential",
       isFeatured: false
+    },
+    {
+      title: "The Connoisseur's Corner",
+      description: "An exquisite residential space designed for refined living and sophisticated taste.",
+      imageUrl: "/images/connoisseurs-corner-main.jpg",
+      images: [],
+      category: "Residential",
+      isFeatured: false
     }
   ];
 
