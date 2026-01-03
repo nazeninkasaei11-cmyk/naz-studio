@@ -75,8 +75,8 @@ export async function registerRoutes(
     {
       title: "Multi-family home Schwaikheim Germany",
       description: "High-end interior design for a luxury coastal property.",
-      imageUrl: "/images/schwaikheim-main.webp",
-      images: [],
+      imageUrl: "/images/schwaikheim-first.webp",
+      images: ["/images/schwaikheim-main.webp"],
       category: "",
       isFeatured: true
     },
