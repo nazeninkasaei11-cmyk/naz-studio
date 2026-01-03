@@ -75,8 +75,8 @@ export async function registerRoutes(
     {
       title: "Multi-family home Schwaikheim Germany",
       description: "High-end interior design for a luxury coastal property.",
-      imageUrl: "/images/el-campello-dining.jpg",
-      images: ["/images/el-campello-2-new.avif", "/images/el-campello-3.avif", "/images/el-campello-kitchen.jpg", "/images/el-campello-terrace.jpg"],
+      imageUrl: "/images/schwaikheim-main.webp",
+      images: [],
       category: "Residential",
       isFeatured: true
     },
