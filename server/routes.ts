@@ -73,14 +73,6 @@ export async function registerRoutes(
       isFeatured: true
     },
     {
-      title: "Multi-family home Schwaikheim",
-      description: "High-end interior design for a luxury coastal property.",
-      imageUrl: "/images/schwaikheim-first.webp",
-      images: ["/images/schwaikheim-main.webp", "/images/schwaikheim-row.webp"],
-      category: "Residential",
-      isFeatured: true
-    },
-    {
       title: "Mariendorf Berlin",
       description: "Seamless intersection of architecture and interiors.",
       imageUrl: "/images/mariendorf-berlin-main.jpg",
