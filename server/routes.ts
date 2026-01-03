@@ -77,7 +77,7 @@ export async function registerRoutes(
       description: "High-end interior design for a luxury coastal property.",
       imageUrl: "/images/schwaikheim-main.webp",
       images: [],
-      category: "Residential",
+      category: "",
       isFeatured: true
     },
     {
