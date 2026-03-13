@@ -2,7 +2,7 @@
 
 ## Overview
 
-A luxury interior design studio portfolio website built with React frontend and Express backend. The application showcases design projects, services, press articles, and handles client inquiries and newsletter subscriptions. The design emphasizes elegance with serif typography, minimal color palette, and smooth animations.
+A luxury interior design studio portfolio website built as a static single-page application (SPA) deployed to GitHub Pages. The application showcases design projects, services, and press articles. The design emphasizes elegance with serif typography, minimal color palette, and smooth animations.
 
 ## User Preferences
 
@@ -13,51 +13,38 @@ Preferred communication style: Simple, everyday language.
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript
 - **Routing**: Wouter for lightweight client-side routing
-- **State Management**: TanStack React Query for server state caching and synchronization
 - **Styling**: Tailwind CSS with custom luxury design tokens (CSS variables for theming)
 - **UI Components**: shadcn/ui component library built on Radix UI primitives
 - **Animations**: Framer Motion for scroll reveals and page transitions
 - **Form Handling**: React Hook Form with Zod schema validation
-
-### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **Database ORM**: Drizzle ORM with PostgreSQL dialect
-- **API Design**: REST endpoints defined in shared routes file with Zod validation schemas
-- **Build System**: Vite for frontend, esbuild for server bundling
+- **Build Tool**: Vite with React plugin
 
 ### Data Layer
-- **Database**: PostgreSQL (connection via DATABASE_URL environment variable)
-- **Schema Location**: `shared/schema.ts` contains all table definitions
-- **Tables**: projects, services, articles, inquiries, subscribers
-- **Migrations**: Drizzle Kit manages schema changes (`npm run db:push`)
+- **Static content**: All portfolio data (projects, services, articles) lives in `client/src/data/content.ts` as plain TypeScript arrays
+- **Type definitions**: `shared/schema.ts` contains TypeScript types and Zod validation schemas
+- **Content hooks**: `client/src/hooks/use-content.ts` provides `useProjects`, `useServices`, etc. that return static data directly
 
 ### Project Structure
 ```
 client/           # React frontend application
   src/
     components/   # Reusable UI components
+    data/         # Static content data (content.ts)
     pages/        # Route page components
-    hooks/        # Custom React hooks for data fetching
-    lib/          # Utilities and query client config
-server/           # Express backend
-  index.ts        # Server entry point
-  routes.ts       # API route handlers
-  storage.ts      # Database access layer
-  db.ts           # Database connection
-shared/           # Shared code between client/server
-  schema.ts       # Drizzle database schema
-  routes.ts       # API route definitions with Zod schemas
+    hooks/        # Custom React hooks (content, mobile, toast)
+    lib/          # Utilities
+shared/           # Shared code
+  schema.ts       # TypeScript types and Zod validation schemas
 ```
 
+### Contact Form
+The contact form validates input client-side with Zod and opens the user's default email client via a `mailto:` link to `info@nazstudio.com.au`.
+
 ### Development vs Production
-- **Development**: Vite dev server with HMR, serves frontend through Express middleware
-- **Production**: Frontend built to `dist/public`, server bundled with esbuild to `dist/index.cjs`
+- **Development**: `npm run dev` starts Vite dev server on port 5173
+- **Production**: `npm run build` outputs static files to `dist/public`, deployed to GitHub Pages
 
 ## External Dependencies
-
-### Database
-- PostgreSQL database required (provision through Replit or set DATABASE_URL)
-- Drizzle ORM handles queries and schema management
 
 ### Frontend Libraries
 - Radix UI primitives for accessible component foundations
@@ -65,11 +52,6 @@ shared/           # Shared code between client/server
 - Lucide React for icons
 - date-fns for date formatting
 
-### Build Tools
-- Vite with React plugin for frontend bundling
-- esbuild for server-side bundling
-- TypeScript for type checking across the codebase
-
-### Replit-Specific
-- `@replit/vite-plugin-runtime-error-modal` for development error display
-- `@replit/vite-plugin-cartographer` and `@replit/vite-plugin-dev-banner` for Replit integration (dev only)
+### Deployment
+- GitHub Pages with `404.html` for SPA routing
+- Custom domain via CNAME
