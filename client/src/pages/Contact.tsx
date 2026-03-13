@@ -2,46 +2,33 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SEO } from "@/components/SEO";
-import { useCreateInquiry } from "@/hooks/use-content";
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertInquirySchema } from "@shared/routes";
-import { z } from "zod";
+import { inquirySchema, type Inquiry } from "@shared/schema";
 import { motion } from "framer-motion";
 
-type InquiryForm = z.infer<typeof insertInquirySchema>;
-
 export default function Contact() {
-  const { mutate, isPending } = useCreateInquiry();
   const { toast } = useToast();
-  
-  const form = useForm<InquiryForm>({
-    resolver: zodResolver(insertInquirySchema),
+
+  const form = useForm<Inquiry>({
+    resolver: zodResolver(inquirySchema),
   });
 
-  const onSubmit = (data: InquiryForm) => {
-    mutate(data, {
-      onSuccess: () => {
-        toast({
-          title: "Inquiry Sent",
-          description: "Thank you for your message. We will be in touch shortly.",
-        });
-        form.reset();
-      },
-      onError: (error) => {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: error.message || "Failed to submit inquiry",
-        });
-      },
+  const onSubmit = (data: Inquiry) => {
+    const subject = encodeURIComponent(`Project Enquiry from ${data.name}`);
+    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+    window.location.href = `mailto:info@nazstudio.com.au?subject=${subject}&body=${body}`;
+    toast({
+      title: "Email Client Opened",
+      description: "Your default email client has been opened with the enquiry details.",
     });
+    form.reset();
   };
 
   return (
     <div className="min-h-screen bg-background pt-32">
-      <SEO 
+      <SEO
         title="Contact Us"
         description="Get in touch with Naz Studio for your interior design project. We are currently accepting new projects for 2026. Located in Virginia, Brisbane QLD."
         canonical="/contact"
@@ -49,7 +36,7 @@ export default function Contact() {
       <Navigation />
 
       <div className="container mx-auto px-6 pb-24">
-        <SectionHeader 
+        <SectionHeader
           label="Get In Touch"
           title="Project Enquiry"
         />
@@ -69,7 +56,7 @@ export default function Contact() {
                 Virginia QLD 4014
               </p>
             </div>
-            
+
             <div>
               <h3 className="font-serif text-2xl mb-4">Contact</h3>
               <p className="text-muted-foreground font-light leading-relaxed mb-2">
@@ -145,10 +132,9 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={isPending}
-                className="w-full bg-primary text-white py-4 uppercase tracking-widest text-xs hover:bg-primary/90 transition-colors shadow-lg shadow-primary/10 disabled:opacity-50"
+                className="w-full bg-primary text-white py-4 uppercase tracking-widest text-xs hover:bg-primary/90 transition-colors shadow-lg shadow-primary/10"
               >
-                {isPending ? "Sending..." : "Send Message"}
+                Send Message
               </button>
             </form>
           </motion.div>
